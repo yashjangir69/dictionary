@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: vocab-bot
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    autoDeploy: true
+    envVars:
+      - key: BOT_TOKEN
+        value: your_telegram_bot_token
+      - key: ALLOWED_GROUP_ID
+        value: -1001234567890
+      - key: ALLOWED_TOPIC_ID
+        value: 45678
